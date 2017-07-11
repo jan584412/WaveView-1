@@ -1,27 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:wave="http://schemas.android.com/apk/res-auto"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
 
-    <com.john.waveview.WaveView
-        android:id="@+id/wave_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#ff702e8c"
-        wave:above_wave_color="@android:color/white"
-        wave:blow_wave_color="@android:color/white"
-        wave:progress="80"
-        wave:wave_height="little"
-        wave:wave_hz="normal"
-        wave:wave_length="middle" />
+    <FrameLayout
+        android:layout_width="193dp"
+        android:layout_height="match_parent">
 
-    <SeekBar
-        android:id="@+id/seek_bar"
+        <TextView
+            android:id="@+id/editText"
+            android:layout_width="146dp"
+            android:layout_height="146dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name"
+            android:textAppearance="@android:style/TextAppearance"
+            android:visibility="visible" />
+
+        <com.waveview.demo.VerticalSeekBar
+            android:id="@+id/seek_bar"
+            android:layout_width="193dp"
+            android:layout_height="match_parent"
+            android:progress="80"
+            android:visibility="visible" />
+
+        <com.john.waveview.WaveView
+            android:id="@+id/wave_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ff702e8c"
+            android:visibility="visible"
+            wave:above_wave_color="@android:color/white"
+            wave:blow_wave_color="@android:color/white"
+            wave:progress="80"
+            wave:wave_height="little"
+            wave:wave_hz="normal"
+            wave:wave_length="middle" >
+
+        </com.john.waveview.WaveView>
+
+    </FrameLayout>
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center_horizontal"
-        android:layout_marginBottom="20dp"
-        android:progress="80" />
-</FrameLayout>
+        android:layout_height="match_parent">
+        <com.waveview.demo.VerticalSeekBar
+            android:id="@+id/seek_bar1"
+            android:layout_width="193dp"
+            android:layout_height="match_parent"
+            android:progress="80"
+            android:visibility="visible" />
+
+        <com.john.waveview.WaveView
+            android:id="@+id/wave_view1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ff702e8c"
+            android:visibility="visible"
+            wave:above_wave_color="@android:color/white"
+            wave:blow_wave_color="@android:color/white"
+            wave:progress="80" />
+    </FrameLayout>
+
+</LinearLayout>
 
